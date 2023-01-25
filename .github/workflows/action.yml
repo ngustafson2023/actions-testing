@@ -15,7 +15,7 @@ jobs:
           ref: master
 
       - name: Run get_model_data script
-        run: node ./.github/workflows/get_model_data.js
+        run: node ./script.js
 
       - name: stage changed files
         run: git add text.txt
