@@ -9,17 +9,17 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Set name
-        run: git config user.name github-actions[bot]
-
-      - name: Set email
-        run: git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
           ref: master
 
+      - name: Set name
+        run: git config user.name github-actions[bot]
+
+      - name: Set email
+        run: git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+        
       - name: Run get_model_data script
         run: node ./script.js
 
