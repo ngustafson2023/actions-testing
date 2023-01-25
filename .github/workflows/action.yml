@@ -36,7 +36,7 @@ jobs:
         run: git add docs/*
 
       - name: commit changed files
-        if: steps.changes.outputs.data == 'true'
+        if: steps.changes.outputs.data == 'true' 
         run: git commit -m "Auto updating docs/"
       
       - name: fetch from master
