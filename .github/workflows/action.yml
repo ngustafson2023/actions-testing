@@ -14,10 +14,13 @@ jobs:
           fetch-depth: 0
           ref: master
 
-      - name: clone trained-models-template
-        run: gh repo clone neuronets/trained-models-template
-        env:
-          GH_TOKEN: ${{ github.token }}
+      - uses: actions/checkout@v3
+        with:
+          repository: neuronets/trained-models-template
+          fetch-depth: 0
+          ref: main
+
+      - run: ls
 
       - name: Run get_model_data script
         run: node ./script.js
