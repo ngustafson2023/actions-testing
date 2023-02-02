@@ -13,11 +13,14 @@ jobs:
         with:
           fetch-depth: 0
           ref: master
+          
+      - run: ls
 
       - uses: actions/checkout@v3
         with:
           repository: neuronets/trained-models-template
           fetch-depth: 0
+          path: .
           ref: main
 
       - run: ls
