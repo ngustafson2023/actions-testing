@@ -31,7 +31,8 @@ jobs:
           mv ./trained-models-template/docs .
           rm -r ./trained-models-template
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - run: ls
 
-      - name: Push to gh-pages
-        run: git push origin gh-pages
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          branch: gh-pages
