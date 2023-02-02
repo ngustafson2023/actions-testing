@@ -14,7 +14,18 @@ jobs:
           fetch-depth: 0
           ref: master
 
+      - name: clone trained-models-template
+        run: git clone https://github.com/neuronets/trained-models-template.git
+
       - name: Run get_model_data script
         run: node ./script.js
 
+      - name: Restructure file structure
+        run: |
+          mv ./trained-models-template/docs .
+          rm -r ./trained-models-template
+
       - uses: stefanzweifel/git-auto-commit-action@v4
+
+      - name: Push to gh-pages
+        run: git push origin gh-pages
